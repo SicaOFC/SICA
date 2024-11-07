@@ -21,5 +21,5 @@ insert into alunos values (123456, "Mateus", "2DS", "oi@hotmail.com");
 insert into inscricao values (null, 123456, "basquete");
 
 select a.*, i.Esporte from alunos a 
-inner join inscricao i on a.RM = i.RM 
+inner join inscricao i on a.RM = i.RM
 where classe = '2DS' and i.Esporte = "basquete";
