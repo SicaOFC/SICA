@@ -9,7 +9,8 @@ Nome	varchar(30) not null,
 Classe	varchar(20) not null,
 Email	varchar(30) not null,
 Sexo	char(1) not null,
-Nascimento	date not null
+Nascimento	date not null,
+Senha varchar(20) not null
 );
 
 create table inscricao (
