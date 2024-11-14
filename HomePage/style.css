@@ -4,15 +4,12 @@
     box-sizing: border-box;
 }
 
-/* .container {
-    display: flex;
-    max-width: 800px;
-    width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    overflow: hidden;
-} */
+.container-grid {
+    width: 80%;
+    max-width: 1770px;
+
+    margin: 0 auto;
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -26,10 +23,16 @@ header {
     background-color: #fff;
 }
 
+#atalhos {
+    width: 590px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+    width: 105px;
 }
 
 nav ul {
@@ -44,10 +47,11 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #333;
+    font-weight: bold;
 }
 
 .user-icon {
-    font-size: 24px;
+   width: 25px;
 }
 
 .banner {
@@ -59,16 +63,21 @@ nav ul li a {
     height: auto;
 }
 
-.info, .about, .features {
+#info, #about, #features {
+    height: 385px;
+    padding: 40px 0px;
+
+    /* overflow: hidden; */
+    
     display: flex;
     align-items: center;
-    padding: 40px 0px;
-    margin-top: 20px;
+    align-content: space-between;
+    justify-content: center;
 }
 
 .info-text, .about-text, .features-text {
-    flex: 1;
     padding: 20px;
+    width: 680px;
 }
 
 .info-text p, .features-text p, .about-text p {
@@ -76,24 +85,35 @@ nav ul li a {
     color: #fff;
 }
 
-.info {
-    background-color: #f57c00;
+#about, #features {
+    margin-top: 160px;
+}
+
+#info {
+    background-color: #F18E2C;
+    color: #fff;
+    margin-top: 80px;
+}
+
+#info img, #features img, #about img{
+    object-fit: fill;
+
+    transition: transform 300ms;
+}
+
+#info img:hover, #features img:hover, #about img:hover{
+    transform: scale(1.05);
+}
+
+#about {
+    background-color: #F18E2C;
     color: #fff;
 }
 
-.info img, .features img, .about img{
-    width: 60%;
-}
-
-.about {
-    margin-top: 20px;
-    background-color: #f57c00;
+#features {
+    background-color: #F18E2C;
     color: #fff;
-}
-
-.features {
-    background-color: #f57c00;
-    color: #fff;
+    margin-bottom: 155px;
 }
 
 .about-text h2 {
@@ -102,6 +122,7 @@ nav ul li a {
 }
 
 footer {
+    height: 130px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,10 +133,15 @@ footer {
 .footer-logo {
     font-size: 24px;
     color: #fff;
+    margin-left: 200px;
+}
+.social-icons {
+    margin-right: 200px;
 }
 
-.social-icons img {
+.social-icons svg{
+    fill: #fff;
     width: 24px;
     height: 24px;
-    margin-left: 10px;
+    margin-left: 50px;
 }
