@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro SICA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <img src="image/logo.png" alt="Logo SICA" class="logo">
+            <h1>Cadastro</h1>
+            <form action="ctrCadastro.php" method="post">
+                <label for="rm">RM</label>
+                <input type="text" id="rm" name="rm" required>
+
+                <label for="username">Nome</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="classe">Classe</label>
+                <input type="text" id="classe" name="classe" required>
+                
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="sexo">Sexo</label>
+                <div>
+                    <input type="radio" id="sexo" name="sexo" value="M" required> M
+                    <input type="radio" id="sexo" name="sexo" value="F" required> F
+                </div>
+              
+                <label for="nascimento">Data de Nascimento</label>
+                <input type="date" id="nascimento" name="nascimento" required>
+
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit" value="cadastrar">Entrar</button>
+            </form>
+        </div>
+        <div class="image-box">
+            <img src="image/sideImage.png" alt="Usuário" class="user-image">
+        </div>
+    </div>
+</body>
+</html>
