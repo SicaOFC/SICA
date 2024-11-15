@@ -14,44 +14,61 @@
             <img src="image/logo.png" alt="Logo SICA" class="logo">
             <h1>Cadastro</h1>
             <form action="../php/login/ctrCadastro.php" method="post">
-                <label for="rm">RM</label>
-                <input type="text" id="rm" name="rm" pattern="\d{6}" required>
+                <div class="div">
+                    <label for="rm">RM</label>
+                    <input type="text" id="rm" name="rm" pattern="\d{6}" required>
+                </div>
 
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" pattern="^[A-Za-z]+( [A-Za-z]+)*$" required>
-
-                <label for="classe">Classe</label>
-                <select id="classe" name="classe" required>
-                    <option value="1DS">1DS</option>
-                    <option value="2DS">2DS</option>
-                    <option value="3DS">3DS</option>
-                </select>
-
-                <label for="email">Email</label>
-                <div class="email">
-                    <input type="text" id="email" name="email"
-                        pattern="^(?=[A-Za-z0-9._]{3,}$)(?!.*[_.]{2})[A-Za-z0-9]+([._][A-Za-z0-9]+)*$" required>
-                    <select id="email2" name="email2" required>
-                        <option value="@gmail.com">@gmail.com</option>
-                        <option value="@hotmail.com">@hotmail.com</option>
-                        <option value="@outlook.com">@outlook.com</option>
+                <div class="div">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" pattern="^[A-Za-z]+( [A-Za-z]+)*$" required>
+                </div>
+                <div class="div">
+                    <label for="classe">Classe</label>
+                    <select id="classe" name="classe" required>
+                        <option value="1DS">1DS</option>
+                        <option value="2DS">2DS</option>
+                        <option value="3DS">3DS</option>
                     </select>
                 </div>
 
-                <label for="sexo">Sexo</label>
-                <div>
-                    <input type="radio" name="sexo" value="M" required> M
-                    <input type="radio" name="sexo" value="F" required> F
+                <label for="email">Email</label>
+                <div class="div">
+                    <div class="email">
+                        <input type="text" id="email" name="email"
+                            pattern="^(?=[A-Za-z0-9._]{3,}$)(?!.*[_.]{2})[A-Za-z0-9]+([._][A-Za-z0-9]+)*$" required>
+                        <select id="email2" name="email2" required>
+                            <option value="@gmail.com">@gmail.com</option>
+                            <option value="@hotmail.com">@hotmail.com</option>
+                            <option value="@outlook.com">@outlook.com</option>
+                        </select>
+                    </div>
                 </div>
 
-                <label for="nascimento">Data de Nascimento</label>
-                <input type="date" id="nascimento" name="nascimento" min='1900-01-01' required>
+                <div class="div">
+                    <label for="sexo">Sexo</label>
+                    <div>
+                        <input type="radio" name="sexo" value="M" required> M
+                        <input type="radio" name="sexo" value="F" required> F
+                    </div>
+                </div>
 
-                <label for="password">Senha</label>
-                <input type="password" id="senha" name="senha" required>
+                <div class="div">
+                    <label for="nascimento">Data de Nascimento</label>
+                    <input type="date" id="nascimento" name="nascimento" min='1900-01-01' required>
+                </div>
 
-                <button type="submit" name="submit" value="cadastrar">Cadastrar</button>
+                <div class="div">
+                    <label for="password">Senha</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+
+                <div class="div">
+                    <button type="submit" name="submit" value="cadastrar">Cadastrar</button>
+                </div>
+
                 <label style="text-align: center;"><a href="../LoginPage/">Já tem uma conta? Logar</a></label>
+
             </form>
         </div>
         <div class="image-box">
