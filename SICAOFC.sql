@@ -1,28 +1,26 @@
 create database sica;
-drop database sica;
+-- drop database sica;
 use sica;
 
 create table alunos 
 (
-RM		int(6) primary key not null,
-Nome	varchar(30) not null,
-Classe	varchar(20) not null,
-Email	varchar(30) not null,
-Sexo	char(1) not null,
-Nascimento	date not null,
-Senha varchar(20) not null
+rm		    int(6) primary key not null,
+nome	    varchar(30) not null,
+classe	    varchar(5) not null,
+email	    varchar(30) not null,
+sexo	    char(1) not null,
+nascimento  date not null,
+senha       varchar(255) not null
 );
 
 create table inscricao (
-id		int auto_increment primary key not null,
-RM		int(6) not null,
-constraint FK_InscriAluno Foreign key (RM) references alunos(RM),
-Esporte		varchar(20) not null
+id		    int auto_increment primary key not null,
+rm		    int(6) not null,
+constraint fk_inscri_aluno Foreign key (rm) references alunos(rm),
+esporte		varchar(20) not null
 );
 
-insert into alunos values (123456, "Mateus", "2DS", "oi@hotmail.com", "M", "2007-10-06");
+insert into alunos values (123456, "Mateus", "2DS", "oi@hotmail.com", "M", "2007-10-06", "123");
 insert into inscricao values (null, 123456, "basquete");
 
-select a.*, i.Esporte from alunos a 
-inner join inscricao i on a.RM = i.RM 
-where classe = '2DS' and i.Esporte = "basquete";
+-- select a.*, i.esporte from alunos a inner join inscricao i on a.rm = i.rm where classe = '2DS' and i.esporte = "basquete";

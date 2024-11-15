@@ -54,11 +54,20 @@ label {
     color: #333;
 }
 
-input {
+input, select {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
+}
+
+.email {
+    display: flex;
+    justify-content: space-between;
+}
+
+.email input, .email select {
+    width: 49%;
 }
 
 button {
@@ -92,7 +101,13 @@ button:hover {
     object-fit: cover;
 }
 
-#sexo {
+input[type="radio"] {
     margin-bottom: 0;
     width: fit-content;
 }
+
+a:link, a:visited, a:hover, a:active{
+    color: #a7a7a7;
+    background-color: transparent;
+    text-decoration: none;
+  }

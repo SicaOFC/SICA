@@ -11,14 +11,15 @@
         <div class="login-box">
             <img src="image/logo.png" alt="Logo SICA" class="logo">
             <h1>Login</h1>
-            <form>
-                <label for="username">Usuário</label>
-                <input type="text" id="username" name="username" required>
+            <form action="../php/login/ctrLogin.php" method="post">
+                <label for="rm">RM</label>
+                <input type="text" id="rm" name="rm" pattern="\d{6}" required>
                 
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" required>
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
                 
-                <button type="submit">Entrar</button>
+                <button type="submit" name="submit" value="login">Entrar</button>
+                <label style="text-align: center;"><a href="../RegisterPage/">Ainda não tem uma conta? Cadastre-se</a></label>
             </form>
         </div>
         <div class="image-box">
@@ -26,4 +27,14 @@
         </div>
     </div>
 </body>
+<script>
+        document.getElementById('rm').addEventListener('input', function () {
+        const regex = /^\d{6}$/;
+        if (!regex.test(this.value) && this.value.length > 0) {
+            this.setCustomValidity("Insira exatamente 6 números.");
+        } else {
+            this.setCustomValidity("");
+        }
+    });
+</script>
 </html>

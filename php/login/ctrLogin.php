@@ -5,13 +5,13 @@ include_once "clsLogin.php";
 
 print_r($_POST);
 $Cad = new login();
-$nome = filter_input(INPUT_POST, "username");
-$senha = filter_input(INPUT_POST, "password");
+$rm = filter_input(INPUT_POST, "rm");
+$senha = filter_input(INPUT_POST, "senha");
 
-$Cad->setNome($nome);
+$Cad->setRm($rm);
 $Cad->setSenha($senha);
 
-if (isset($_POST["login"])) {
+if (isset($_POST["submit"]) && $_POST["submit"] = "login") {
     $mensagem = $Cad->logar();
     echo $mensagem;
 }

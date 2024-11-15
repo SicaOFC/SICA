@@ -95,3 +95,9 @@ button:hover {
     object-fit: cover;
     object-position: 60% 0;
 }
+
+a:link, a:visited, a:hover, a:active{
+    color: #a7a7a7;
+    background-color: transparent;
+    text-decoration: none;
+  }

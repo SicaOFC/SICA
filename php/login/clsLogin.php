@@ -38,27 +38,26 @@ class login
     {
         return $this->email;
     }
-    public function setSexo($sexo)
+    public function setEmail($email)
     {
-        $this->$sexo = $sexo;
+        $this->email = $email;
     }
     public function getSexo()
     {
         return $this->sexo;
     }
-    public function setNascimento($nascimento)
+    public function setSexo($sexo)
     {
-        $this->$nascimento = $nascimento;
+        $this->sexo = $sexo;
     }
     public function getNascimento()
     {
         return $this->nascimento;
     }
-    public function setEmail($email)
+    public function setNascimento($nascimento)
     {
-        $this->$email = $email;
+        $this->nascimento = $nascimento;
     }
-
     public function getSenha()
     {
         return $this->senha;
@@ -73,19 +72,21 @@ class login
         include_once "../conexao/conexao.php";
 
         try {
-            $Comando = $conexao->prepare("SELECT * FROM alunos WHERE nome = ? AND senha = ?");
-            $Comando->bindParam(1, $this->nome);
-            $Comando->bindParam(2, $this->senha);
+            $Comando = $conexao->prepare("SELECT * FROM alunos WHERE rm = ?");
+            $Comando->bindParam(1, $this->rm);
             $Comando->execute();
             $cliente = $Comando->fetch(PDO::FETCH_ASSOC);
-            if ($cliente && password_verify($this->senha, $cliente['senha'])) {
-                $_SESSION['nome'] = $this->nome;
-                $_SESSION['id'] = $cliente['id'];
+            if (!$cliente) {
+                return "Usuário não existente";
+            }
+            if (password_verify($this->senha, $cliente['senha'])) {
+                $_SESSION['nome'] = $cliente['nome'];
+                $_SESSION['id'] = $this->rm;
                 setcookie('nome', $_SESSION['nome'], time() + 3600, '/');
                 setcookie('id', $_SESSION['id'], time() + 3600, '/');
                 return "Entrou";
             } else {
-                return "nome ou senha errados";
+                return "RM ou senha errados";
             }
 
 
@@ -100,14 +101,12 @@ class login
         include_once "../conexao/conexao.php";
 
         try {
-            $Comando = $conexao->prepare("SELECT * FROM alunos WHERE nome = ? OR senha = ?");
-            $Comando->bindParam(1, $this->nome);
-            $Comando->bindParam(2, $this->senha);
+            $Comando = $conexao->prepare("SELECT * FROM alunos WHERE rm = ?");
+            $Comando->bindParam(1, $this->rm);
             $Comando->execute();
-
             if ($Comando->rowCount() == 0) {
                 $senha = password_hash($this->senha, PASSWORD_ARGON2ID);
-                $smt = $conexao->prepare("INSERT INTO alunos (rm, nome, classe, email, sexo, nascimento, senha) VALUES (?, ?, ?, ?, ? , ?, ?)");
+                $smt = $conexao->prepare("INSERT INTO alunos VALUES (?, ?, ?, ?, ? , ?, ?)");
                 $smt->bindParam(1, $this->rm);
                 $smt->bindParam(2, $this->nome);
                 $smt->bindParam(3, $this->classe);
@@ -117,15 +116,14 @@ class login
                 $smt->bindParam(7, $senha);
                 $smt->execute();
             } else {
-                return "ja existe esse cadastro";
+                return "Cadastro já existente";
             }
             if ($smt->rowCount() > 0) {
                 $_SESSION['nome'] = $this->nome;
                 $_SESSION['id'] = $conexao->lastInsertId();
                 setcookie('nome', $_SESSION['nome'], time() + 3600, '/');
                 setcookie('id', $_SESSION['id'], time() + 3600, '/');
-                header("Location: perfil.php");
-                exit();
+                return "Cadastrado com sucesso";
             }
         } catch (PDOException $erro) {
             return "Erro ao cadastrar: " . $erro->getMessage();
