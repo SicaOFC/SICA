@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro SICA</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <div class="login-box">
             <img src="image/logo.png" alt="Logo SICA" class="logo">
             <h1>Cadastro</h1>
-            <form action="ctrCadastro.php" method="post">
+            <form action="../php/login/ctrCadastro.php" method="post">
                 <label for="rm">RM</label>
-                <input type="text" id="rm" name="rm" required>
+                <input type="text" id="rm" name="rm" pattern="\d{6}" required>
 
-                <label for="username">Nome</label>
-                <input type="text" id="username" name="username" required>
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" pattern="^[A-Za-z]+( [A-Za-z]+)*$" required>
 
                 <label for="classe">Classe</label>
-                <input type="text" id="classe" name="classe" required>
-                
+                <select id="classe" name="classe" required>
+                    <option value="1DS">1DS</option>
+                    <option value="2DS">2DS</option>
+                    <option value="3DS">3DS</option>
+                </select>
+
                 <label for="email">Email</label>
-                <input type="text" id="email" name="email" required>
+                <div class="email">
+                    <input type="text" id="email" name="email"
+                        pattern="^(?=[A-Za-z0-9._]{3,}$)(?!.*[_.]{2})[A-Za-z0-9]+([._][A-Za-z0-9]+)*$" required>
+                    <select id="email2" name="email2" required>
+                        <option value="@gmail.com">@gmail.com</option>
+                        <option value="@hotmail.com">@hotmail.com</option>
+                        <option value="@outlook.com">@outlook.com</option>
+                    </select>
+                </div>
 
                 <label for="sexo">Sexo</label>
                 <div>
-                    <input type="radio" id="sexo" name="sexo" value="M" required> M
-                    <input type="radio" id="sexo" name="sexo" value="F" required> F
+                    <input type="radio" name="sexo" value="M" required> M
+                    <input type="radio" name="sexo" value="F" required> F
                 </div>
-              
+
                 <label for="nascimento">Data de Nascimento</label>
-                <input type="date" id="nascimento" name="nascimento" required>
+                <input type="date" id="nascimento" name="nascimento" min='1900-01-01' required>
 
                 <label for="password">Senha</label>
-                <input type="password" id="password" name="password" required>
-                
-                <button type="submit" value="cadastrar">Entrar</button>
+                <input type="password" id="senha" name="senha" required>
+
+                <button type="submit" name="submit" value="cadastrar">Cadastrar</button>
+                <label style="text-align: center;"><a href="../LoginPage/">Já tem uma conta? Logar</a></label>
             </form>
         </div>
         <div class="image-box">
@@ -44,4 +59,37 @@
         </div>
     </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('nascimento').max = new Date().toISOString().split("T")[0];
+    });
+
+    document.getElementById('rm').addEventListener('input', function () {
+        const regex = /^\d{6}$/;
+        if (!regex.test(this.value) && this.value.length > 0) {
+            this.setCustomValidity("Insira exatamente 6 números.");
+        } else {
+            this.setCustomValidity("");
+        }
+    });
+
+    document.getElementById('nome').addEventListener('input', function () {
+        const regex = /^[A-Za-z]+( [A-Za-z]+)*$/;
+        if (!regex.test(this.value) && this.value.length > 0) {
+            this.setCustomValidity("Insira apenas letras e não insira mais que um espaço seguido.");
+        } else {
+            this.setCustomValidity("");
+        }
+    });
+
+    document.getElementById('email').addEventListener('input', function () {
+        const regex = /^(?=[A-Za-z0-9._]{3,}$)(?!.*[_.]{2})[A-Za-z0-9]+([._][A-Za-z0-9]+)*$/;
+        if (!regex.test(this.value) && this.value.length > 0) {
+            this.setCustomValidity("Insira pelo menos 3 letras, sem espaços e apenas os caracteres especiais são (.) e (_) permitidos.");
+        } else {
+            this.setCustomValidity("");
+        }
+    });
+</script>
+
 </html>
