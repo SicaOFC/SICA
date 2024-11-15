@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login SICA</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -27,14 +28,4 @@
         </div>
     </div>
 </body>
-<script>
-        document.getElementById('rm').addEventListener('input', function () {
-        const regex = /^\d{6}$/;
-        if (!regex.test(this.value) && this.value.length > 0) {
-            this.setCustomValidity("Insira exatamente 6 números.");
-        } else {
-            this.setCustomValidity("");
-        }
-    });
-</script>
 </html>
