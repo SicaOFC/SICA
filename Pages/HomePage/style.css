@@ -50,6 +50,10 @@ nav ul li a {
     font-weight: bold;
 }
 
+.navbar nav ul li a:hover {
+    text-decoration: underline;
+}
+
 .user-icon {
    width: 25px;
 }

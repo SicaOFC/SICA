@@ -1,0 +1,177 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    line-height: 1.5;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #F18E2C;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar {
+    width: 590px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar nav ul li {
+    margin: 0 15px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.navbar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.user-icon svg{
+    width: 25px;
+    cursor: pointer;
+}
+
+/* Conteúdo principal */
+.profile-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px 70px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #cccccc;
+}
+
+input[type="file"] {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+    border-color: #F18E2C;
+}
+
+/* Botões */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-save {
+    background-color: #F18E2C;
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #f7a245;
+}
+
+.btn-cancel {
+    background-color: #cccccc;
+    color: black;
+}
+
+.btn-cancel:hover {
+    background-color: #e0e0e0;
+}
+
+/* Rodapé */
+footer {
+    height: 115px;
+    margin-top: 79px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #183153;
+}
+
+.footer-logo {
+    font-size: 24px;
+    color: #fff;
+    margin-left: 200px;
+}
+.social-icons {
+    margin-right: 200px;
+}
+
+.social-icons svg{
+    fill: #fff;
+    width: 24px;
+    height: 24px;
+    margin-left: 50px;
+}

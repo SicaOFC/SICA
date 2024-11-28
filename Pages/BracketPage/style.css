@@ -1,0 +1,173 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: white;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #F18E2C;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar {
+    width: 590px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    width: 105px;
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar nav ul li {
+    margin: 0 15px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.navbar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.user-icon svg{
+    width: 25px;
+    cursor: pointer;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Chaves */
+main {
+    margin-top: 100px;
+    background-color: #f48220;
+    padding: 80px 0px;
+}
+
+.bracket {
+    display: flex;
+    justify-content: center;
+
+    gap: 50px;
+    padding-left: 450px;
+    margin-top: 100px;
+    
+    max-width: 1500px;
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.match {
+    background-color: #011b38;
+    border: 2px solid #183153;
+    border-radius: 8px;
+    padding: 10px 20px;
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.match-semi {
+    background-color: #011b38;
+    border: 2px solid #183153;
+    border-radius: 8px;
+    padding: 10px 20px;
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 85px;
+}
+
+.match-final {
+    background-color: #011b38;
+    border: 2px solid #183153;
+    border-radius: 8px;
+    padding: 10px 20px;
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 130px;
+}
+
+.team {
+    flex: 1;
+    font-size: 14px;
+}
+
+.score {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.winner {
+    color: #f48220;
+}
+
+.division {
+   margin: 0px 15px;
+}
+
+/* Rodapé */
+footer {
+    height: 115px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #183153;
+
+    margin-top: 120px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    color: #fff;
+    margin-left: 200px;
+}
+.social-icons {
+    margin-right: 200px;
+}
+
+.social-icons svg{
+    fill: #fff;
+    width: 24px;
+    height: 24px;
+    margin-left: 50px;
+}

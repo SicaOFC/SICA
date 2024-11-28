@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login SICA</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="LoginPage/style.css">
+    <script src="LoginPage/script.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="login-box">
-            <img src="image/logo.png" alt="Logo SICA" class="logo">
+            <img src="LoginPage/image/logo.png" alt="Logo SICA" class="logo">
             <h1>Login</h1>
-            <form action="../php/login/ctrLogin.php" method="post">
+            <form action="php/login/ctrLogin.php" method="post">
                 <label for="rm">RM</label>
                 <input type="text" id="rm" name="rm" pattern="\d{6}" required>
                 
@@ -20,11 +20,11 @@
                 <input type="password" id="senha" name="senha" required>
                 
                 <button type="submit" name="submit" value="login">Entrar</button>
-                <label class="sign-out"><a href="../RegisterPage/">Ainda não tem conta? Cadastre-se!</a></label>
+                <label class="sign-out"><a href="indexRegisterPage.html">Ainda não tem conta? Cadastre-se!</a></label>
             </form>
         </div>
         <div class="image-box">
-            <img src="image/sideImage.png" alt="Usuário" class="user-image">
+            <img src="LoginPage/image/sideImage.png" alt="Usuário" class="user-image">
         </div>
     </div>
 </body>

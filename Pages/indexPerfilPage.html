@@ -4,72 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SICA - Sistema de Intercurso Acessível</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Gerenciamento de Perfil</title>
+    <link rel="stylesheet" href="PerfilPage/style.css">
 </head>
 
 <body>
-    <!-- Cabeçalho -->
     <header>
-        <div id="atalhos">
-            <a href="#">
-                <img class="logo" src="image/logo.png">
-            </a>
-            <img src="image/Line 3.png">
+        <div class="navbar">
+            <div>
+                <a href="#">
+                    <img src="PerfilPage/images/logoW.png" alt="Logo SICA" class="logo">
+                </a>
+            </div>
+            <img src="PerfilPage/images/Line 4.png">
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Equipes</a></li>
-                    <li><a href="#">Chaves</a></li>
-                    <li><a href="#">Modalidades</a></li>
+                    <li><a href="indexHomePage.html">Home</a></li>
+                    <!-- <li><a href="ModalitiesPage/">Equipes</a></li> -->
+                    <li><a href="indexBracketPage.html">Chaves</a></li>
+                    <li><a href="indexModalitiesPage.html">Modalidades</a></li>
                 </ul>
             </nav>
         </div>
-        <a href="#">
-            <svg class="user-icon" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                <path
-                    d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
-            </svg>
-        </a>
+            <div>
+                <a href="indexPerfilPage.html" class="user-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path fill="white"
+                            d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                    </svg>
+                </a>
+            </div>
     </header>
 
-    <!-- Seções principais -->
-    <section class="banner">
-        <div class="container-grid">
-            <img src="image/banner.png" alt="Imagem de esporte 1">
-        </div>
-    </section>
+    <main>
+        <div class="profile-container">
+            <h1>Gerenciamento de Perfil</h1>
 
-    <section id="info">
-        <img src="image/image1.png" alt="Imagem de esporte 2">
-        <div class="info-text">
-            <p>O esporte é uma oportunidade de superação, onde cada treino e desafio impulsiona o crescimento. Ao se
-                dedicar, você vence suas próprias barreiras, físicas e mentais. Vença seus limites e descubra a
-                força que existe em você.</p>
-        </div>
-    </section>
+            <form class="profile-form">
+                <!-- Foto do perfil -->
+                <div class="form-group">
+                    <label for="profile-picture">Foto de Perfil</label>
+                    <input type="file" id="profile-picture" accept="image/*">
+                </div>
 
-    <section id="about">
-        <div class="about-text">
-            <p>O SICA (Sistema de Intercurso Acessível) é uma plataforma inovadora criada para simplificar o
-                cadastro e a organização de eventos esportivos escolares</p>
-        </div>
-        <img src="image/image2.png" alt="Imagem de esporte 3">
-    </section>
+                <!-- Nome -->
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" placeholder="Digite seu nome" required>
+                </div>
 
-    <section id="features">
-        <img src="image/image3.png" alt="Imagem de esporte 4">
-        <div class="features-text">
-            <p>Permitindo cadastrar novos eventos de forma simples e rápida. É possível também fazer login
-                facilmente. Os usuários podem visualizar todas as modalidades disponíveis no site. A plataforma foi
-                desenvolvida para tornar o gerenciamento de eventos mais eficiente e acessível para todos.</p>
-        </div>
-    </section>
+                <!-- E-mail -->
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                </div>
 
-    <!-- Rodapé -->
+                <!-- Senha -->
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="Digite sua nova senha">
+                </div>
+
+                <!-- Botões -->
+                <div class="form-buttons">
+                    <button type="submit" class="btn-save">Salvar Alterações</button>
+                    <button type="reset" class="btn-cancel">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
     <footer>
-        <div class="footer-logo"><img src="image/logoW.png"></div>
+        <div class="footer-logo"><img src="PerfilPage/images/logoW.png"></div>
         <div class="social-icons">
             <a href="#"><svg xmlns=" http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -88,7 +95,6 @@
                 </svg></a>
         </div>
     </footer>
-
 </body>
 
 </html>
